@@ -26,20 +26,20 @@ int main(int argc, char *argv[]) {
             }
             GetName = true;
         } else {
-            fprintf(stderr,"参数错误\n");
+            fprintf(stderr, "参数错误\n");
             exit(1);
         }
     }
     //创建num * 3二维数组buf
     uint8 **buf = make(uint8 *, num);
     if (buf == NULL) {
-        fprintf(stderr,"内存不足\n");
+        fprintf(stderr, "内存不足\n");
         exit(1);
     }
     for (int i = 0; i < num; i++) {
         buf[i] = make(uint8, 3);
         if (buf[i] == NULL) {
-            fprintf(stderr,"内存不足\n");
+            fprintf(stderr, "内存不足\n");
             exit(1);
         }
     }
@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
     //创建文件
     FILE *f = fopen(FileName, "w");
     if (f == NULL) {
-        fprintf(stderr,"文件创建失败\n");
+        fprintf(stderr, "文件创建失败\n");
         exit(1);
     }
     //将buf输出到文件
