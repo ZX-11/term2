@@ -2,7 +2,7 @@
 #define init() \
     enum ways way = strstr(FileAddr, ".txt") != NULL ? text:bin;\
     FILE *f = fopen(FileAddr, way == text?"r":"rb");\
-    check(f != NULL, "ÎÄ¼ş¶ÁÈ¡Ê§°Ü");\
+    check(f != NULL, "æ–‡ä»¶è¯»å–å¤±è´¥");\
     switch (way) {\
     case text: fscanf(f, "%d", num); break;\
     case bin: fread(num, sizeof(int), 1, f);}
@@ -51,8 +51,8 @@ Data **loadfile_PointerArr(char *FileAddr, /*return*/int *num) {
 List *loadfile_List(char *FileAddr, /*return*/int *num) {
     init();
     List *ls = list_New();
+    Data buf;
     for (int i = 0; i < *num; i++) {
-        Data buf;
         switch (way) {
         case text: fscanf(f, "%d,%d,%d", &buf.i1, &buf.i2, &buf.i3); break;
         case bin: fread(&buf, sizeof(Data), 1, f);
